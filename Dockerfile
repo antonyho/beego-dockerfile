@@ -8,3 +8,12 @@ MAINTAINER Antony Ho ntonyworkshop@gmail.com
 # Install beego & bee
 RUN go get github.com/astaxie/beego
 RUN go get github.com/beego/bee
+
+# Expose port to public
+EXPOSE 8080
+
+# Copy the source code from current directory to /go/src in container
+RUN mkdir -p /go/src/app
+WORKDIR /go/src/app
+ONBUILD COPY . /go/src/app
+CMD bee run
