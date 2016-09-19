@@ -14,6 +14,6 @@ EXPOSE 8080
 
 # Copy the source code from current directory to /go/src in container
 RUN mkdir -p /go/src/app
-WORKDIR /go/src/app
 ONBUILD COPY . /go/src/app
+WORKDIR /go/src/app
 CMD bee run
