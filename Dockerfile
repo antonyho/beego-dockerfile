@@ -6,13 +6,14 @@ MAINTAINER Antony Ho ntonyworkshop@gmail.com
 # ENV GOPATH /go
 
 ARG app_name=app
+ARG port=8080
 
 # Install beego & bee
 RUN go get github.com/astaxie/beego
 RUN go get github.com/beego/bee
 
 # Expose port to public
-EXPOSE 8080
+EXPOSE $port
 
 # Copy the source code from current directory to /go/src in container
 # Place the Dockerfile into source code directory and build Docker image
