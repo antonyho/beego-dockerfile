@@ -15,7 +15,7 @@ RUN go get github.com/beego/bee
 
 # Expose port to public
 EXPOSE $http_port
-EXPOST $https_port
+EXPOSE $https_port
 
 # Copy the source code from current directory to /go/src in container
 # Place the Dockerfile into source code directory and build Docker image
